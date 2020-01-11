@@ -1,0 +1,341 @@
+.building_nav {
+	position: relative;
+	background-color: #f0f0f0;
+	border: 1px solid silver;
+	font-size: 12pt;
+	overflow: hidden;
+}
+.building_nav * {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+/*======= Шапка =======*/
+.bnav-header {
+	position: relative;
+	height: 2em;
+	background-color: #f0f0f0;
+	border-bottom: 1px solid silver;
+	z-index: 20;
+	overflow: hidden;
+}
+.bnav-header .bnav-menu_button {
+	display: inline-block;
+	display: none;
+	margin: 2px 5px;
+	width: 25px;
+	height: 25px;
+	border-radius: 3px;
+	background-image: url('./images/menu.png');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	float: left;
+	cursor: pointer;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+}
+.building_nav.menu_open .bnav-header .bnav-menu_button {
+	background-image: url('./images/menu-close.png');
+}
+.bnav-header_text {
+	display: inline-block;
+	padding: 0.25em 0.5em;
+	font-size: 1.25em;
+	font-weight: bold;
+	color: #555;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+}
+.bnav-section_name {
+	font-weight: bold;
+	font-style: oblique;
+	color: #777;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+}
+/*======= \Шапка =======*/
+
+
+
+/*======= Меню =======*/
+.bnav_menu {
+	position: absolute;
+	display: block;
+	margin: 0;
+	padding: 35px 0 5px 0;
+	top: 0;
+	bottom: 0;
+	width: 200px;
+	background-color: #f0f0f0;
+	list-style-type: none;
+	overflow: auto;
+	box-shadow: 1px 0 3px silver;
+	z-index: 15;
+}
+.bnav_menu li {
+	display: block;
+	padding: 3px 0;
+}
+.bnav_menu li a {
+	display: block;
+	padding: 3px;
+	color: #3e3e9c;
+	text-decoration: none;
+}
+.bnav_menu li.bnav_menu-single_item a.build_in_map:before {
+	display: inline-block;
+	margin-right: 0.25em;
+	font-style: normal;
+}
+.bnav_menu a.open_item {
+	background-color: #e0e0e0;
+}
+.bnav_menu li.bnav_menu-dropdown a.dropdown_button {
+	color: #555;
+}
+.bnav_menu li.bnav_menu-dropdown a.dropdown_button:before {
+	display: inline-block;
+	content: '\23F5';
+	margin-right: 0.25em;
+}
+.bnav_menu li.bnav_menu-dropdown.active > a.dropdown_button:before {
+	content: '\23F7';
+}
+.bnav_menu li.bnav_menu-dropdown a.build_in_map {
+	font-style: oblique;
+	text-decoration: underline;
+}
+.bnav_menu li.bnav_menu-dropdown .menu-openbox {
+	display: none;
+	margin-left: 1.2em;
+}
+.bnav_menu li.bnav_menu-dropdown.active > .menu-openbox {
+	display: block;
+}
+.bnav_menu li.bnav_menu-dropdown .menu-openbox a.nav_to_build {
+	font-style: oblique;
+}
+.bnav_menu li.bnav_menu-dropdown .menu-openbox ul.subitems {
+	margin: 0;
+	padding: 0.25em 0;
+	list-style-type: none;
+}
+/*======= \Меню =======*/
+
+
+
+/*======= main =======*/
+.bnav_main {
+	position: relative;
+	margin-left: 200px;
+	background-color: white;
+	min-height: 150px;
+	color: #333;
+	box-sizing: content-box;
+}
+#path_to_build {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.bnav_main p {
+	margin: 0.5em 0;
+}
+
+
+
+/*------- Canvas -------*/
+.bnav_main .canvas-container {
+	position: relative;
+	border: 1px solid #e0e0e0;
+	max-width: 100%;
+	z-index: 5;
+}
+.bnav_main .canvas-container {
+	overflow: hidden;
+}
+.bnav_main .canvas-container canvas {
+	border: 0 solid white;
+	background-color: rgba(255,255,255, 0);
+}
+/*------- \Canvas -------*/
+
+
+/*------- bottom canvas bar -------*/
+.bnav_bottomCanvasBar {
+	position: relative;
+	top: -5px;
+}
+.bnav_bottomCanvasBar .bnav_scale {
+	position: absolute;
+	left: 22px;
+	bottom: 3px;
+	background-color: white;
+	border: 1px solid #e0e0e0;
+	border-radius: 10px;
+	list-style: none;
+	overflow: hidden;
+	z-index: 10;
+}
+.bnav_bottomCanvasBar .bnav_scale li {
+	position: relative;
+	display: inline-block;
+	padding: 0.35em 0;
+	width : 2em;
+	height: 1em;
+	text-align: center;
+	color: #555;
+	font-weight: bold;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+}
+.bnav_bottomCanvasBar .bnav_scale .bnav_scale-value {
+	width: 2.25em;
+	cursor: default;
+}
+.bnav_bottomCanvasBar .bnav_scale .bnav_scale-value:after {
+	content: 'm';
+}
+.bnav_bottomCanvasBar .bnav_scale .bnav_scale-reduce {
+	width: 1.5em;
+	background-color: #f0f0f0;
+	cursor: pointer;
+	font-size: 1.25em;
+}
+.bnav_bottomCanvasBar .bnav_scale .bnav_scale-increase {
+	width: 1.5em;
+	background-color: #f0f0f0;
+	cursor: pointer;
+	font-size: 1.25em;
+}
+.bnav_bottomCanvasBar .bnav_moving {
+	position: absolute;
+	right: 3px;
+	bottom: 3px;
+	list-style: none;
+	overflow: hidden;
+}
+.bnav_bottomCanvasBar .bnav_moving li {
+	position: relative;
+	display: inline-block;
+	margin: 0 1px;
+	padding: 0.35em 0;
+	width : 2em;
+	height: 1em;
+	background-color: white;
+	border: 1px solid #e0e0e0;
+	border-radius: 3px;
+	text-align: center;
+	color: #555;
+	font-weight: bold;
+	cursor: pointer;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	z-index: 10;
+}
+.bnav_bottomCanvasBar .bnav_moving .bnav_moving-toUp {
+	display: block;
+	margin: 0 33% 0 34%;
+}
+/*------- \bottom canvas bar -------*/
+
+
+
+/*------- loading -------*/
+.loading h3 {
+	color: #777;
+	text-align: center;
+}
+.loading .load_animation {
+	display: block;
+	list-style-type: none;
+	text-align: center;
+}
+.loading .load_animation li {
+	display: inline-flex;
+	margin: 45px 0 0 0;
+	width: 13px;
+	height: 13px;
+	background: #fff;
+	border-radius: 50%;
+	align-items: center;
+	justify-content: center; 
+}
+.loading .load_animation li:nth-child(1) {
+	animation: upload 0.8s cubic-bezier(0.39, 0.56, 0.57, 1) 0s infinite alternate-reverse;
+	background-color: #4285f4;
+	margin-right: 6px;
+}
+.loading .load_animation li:nth-child(2) {
+	animation: upload 1.3s cubic-bezier(0.39, 0.56, 0.57, 1) 0s infinite alternate-reverse;
+	background-color: #34a853;
+	margin-right: 3px;
+}
+.loading .load_animation li:nth-child(3) {
+	animation: upload 1.1s cubic-bezier(0.39, 0.56, 0.57, 1) 0s infinite alternate-reverse;
+	background-color: #fbbc05;
+	margin-left: 3px;
+}
+.loading .load_animation li:last-child {
+	animation: upload 1.45s cubic-bezier(0.39, 0.56, 0.57, 1) 0s infinite alternate-reverse;
+	background-color: #ea4335;
+	margin-left: 6px;
+}
+@keyframes upload {
+	from { transform: translateY(35px); }
+	to { transform: translateY(-35px); }
+}
+/*------- \loading -------*/
+
+
+
+/*------- error -------*/
+.error {
+	color: red;
+}
+/*------- \error -------*/
+
+/*======= \main =======*/
+
+
+
+
+@media (max-width: 900px) {
+	/*======= Шапка =======*/
+	.building_nav .bnav-header .bnav-menu_button {
+		display: inline-block;
+	}
+	/*======= \Шапка =======*/
+
+	/*======= Меню =======*/
+	.building_nav .bnav_menu {
+		display: none;
+	}
+	.building_nav.menu_open .bnav_menu {
+		display: block;
+		overflow: auto;
+	}
+	/*======= \Меню =======*/
+
+
+	/*======= main =======*/
+	.building_nav .bnav_main {
+		margin-left: 0;
+	}
+	/*======= \main =======*/
+}
